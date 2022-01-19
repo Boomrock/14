@@ -61,29 +61,36 @@ namespace Лабраторная_14
        
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-
+            int count;
             int V = int.Parse(textBoxInput.Text);
-            labelNumber.Text = "Номер: " + (Calc.IndexOf(ref MassivForBubble, V, 0, N)+1).ToString();
+            int index = Calc.IndexOf(ref MassivForBubble, V, out count);
+            labelNumber.Text = "Номер: " + (index+1).ToString();
+            label1.Text = "кол операций: " + count; 
+            if (index != -1)
+            {
+                dataGridView1.ClearSelection();
+                dataGridView1.Rows[index].Cells[1].Selected = true;
+            }
         }
 
         private void buttonQiuckSort_Click(object sender, EventArgs e)
         {
             MassivForQSort = (int[])Massiv.Clone();
-            Calc.Create_QSort(ref MassivForQSort, 0, N - 1);
+            Calc.QSort(ref MassivForQSort);
             OutputQSort();
         }
 
         private void buttonSelectionSort_Click(object sender, EventArgs e)
         {
             MassivForSelect = (int[])Massiv.Clone();
-            Calc.Create_Select(ref MassivForSelect);
+            Calc.SelectSort(ref MassivForSelect);
             OutputSelect();
         }
 
         private void buttonSortBubble_Click(object sender, EventArgs e)
         {
             MassivForBubble = (int[])Massiv.Clone();
-            Calc.Create_Bubble(ref MassivForBubble, ref N);
+            Calc.BubbleSort(ref MassivForBubble);
             OutputBubble();
         }
 
@@ -96,12 +103,36 @@ namespace Лабраторная_14
         private void buttonSimpleSearch_Click(object sender, EventArgs e)
         {
             int V = int.Parse(textBoxInput.Text);
-            labelNumber.Text = "Номер: " + (Calc.SimpleSearch(ref Massiv, V) + 1).ToString();
+            int index = Calc.SimpleSearch(ref Massiv, V);
+            labelNumber.Text = "Номер: " + (index + 1 ).ToString();
+            if (index != -1)
+            {
+                dataGridView1.ClearSelection();
+                dataGridView1.Rows[index].Cells[0].Selected = true;
+            }
         }
 
         private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
             e.Row.HeaderCell.Value = (e.Row.Index + 1).ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int V = int.Parse(textBoxInput.Text);
+            int index = Calc.SimpleSearch(ref MassivForBubble, V);
+            labelNumber.Text = "Номер: " + (index + 1).ToString();
+            if (index != -1)
+            {
+                dataGridView1.ClearSelection();
+                dataGridView1.Rows[index].Cells[1].Selected = true;
+            }
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

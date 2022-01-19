@@ -9,7 +9,7 @@ namespace Лабраторная_14
 {
     class Calc
     {
-        public static void Create_Select(ref int[] M)
+        public static void SelectSort(ref int[] M)
         {
             for (int i = 0; i < M.Length - 1; i++)
             {
@@ -29,11 +29,11 @@ namespace Лабраторная_14
                 }
             }
         }
-        public static void Create_Bubble(ref int[] M, ref int N)
+        public static void BubbleSort(ref int[] M)
         {
-            for (int i = 0; i < N; i++)
+            for (int i = 0; i < M.Length; i++)
             {
-                for (int j = i + 1; j < N; j++)
+                for (int j = i + 1; j < M.Length; j++)
                 {
                     if (M[i] > M[j])
                     {
@@ -44,7 +44,11 @@ namespace Лабраторная_14
                 }
             }
         }
-        public static void Create_QSort(ref int[] M, int Left, int Right)
+        public static void QSort(ref int[] M)
+        {
+            QSort(ref M, 0, M.Length - 1);
+        }
+        private static void QSort(ref int[] M, int Left, int Right)
         {
             int i = Left;
             int j = Right;
@@ -65,9 +69,9 @@ namespace Лабраторная_14
                 }
             } while (i <= j);
             if (Left < j)
-                Create_QSort(ref M, Left, j);
+                QSort(ref M, Left, j);
             if (i < Right)
-                Create_QSort(ref M, i, Right);
+                QSort(ref M, i, Right);
         }
         public static int SimpleSearch(ref int[] M, int Value)
         {
@@ -76,25 +80,31 @@ namespace Лабраторная_14
                     return i;
             return -1;
         }
-        public static int IndexOf(ref int[] M, int Value, int Left, int Right)
+        public static int IndexOf(ref int[] M, int Value, out int count)
         {
-            {
-                int x = (Left + Right) / 2;
+            count = 0; 
+            return IndexOf(ref M, Value, 0, M.Length - 1, ref count);
+        }
+        private static int IndexOf(ref int[] M, int Value, int Left, int Right, ref int count)
+        {
+            count++;
 
-                if (M[x] == Value)
-                    return x;
+            int x = (Left + Right) / 2;
+
+            if (M[x] == Value)
+                return x;
 
 
-                if ((x == Left) || (x == Right))
-                    return -1;
+            if ((x == Left) || (x == Right))
+                return -1;
 
-                if (M[x] < Value)
-                    return IndexOf(ref M, Value, x, Right);
-                else
-                    return IndexOf(ref M, Value, Left, x);
-            }
+            if (M[x] < Value)
+                return IndexOf(ref M, Value, x, Right, ref count);
+            else
+                return IndexOf(ref M, Value, Left, x, ref count);
+        }
             
 
-        }
+       
     }
 }

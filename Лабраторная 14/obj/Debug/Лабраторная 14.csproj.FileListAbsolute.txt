@@ -8,3 +8,13 @@ C:\Users\Админ\OneDrive\Рабочий стол\Лабараторные р
 C:\Users\Админ\OneDrive\Рабочий стол\Лабараторные работы Ковин\Лабраторная 14\obj\Debug\Лабраторная 14.exe
 C:\Users\Админ\OneDrive\Рабочий стол\Лабараторные работы Ковин\Лабраторная 14\obj\Debug\Лабраторная 14.pdb
 C:\Users\Админ\OneDrive\Рабочий стол\Лабараторные работы Ковин\Лабраторная 14\obj\Debug\Лабраторная 14.csproj.AssemblyReference.cache
+C:\Users\федор\Desktop\программирование и проекты\Git\14\Лабраторная 14\bin\Debug\Лабраторная 14.exe.config
+C:\Users\федор\Desktop\программирование и проекты\Git\14\Лабраторная 14\bin\Debug\Лабраторная 14.exe
+C:\Users\федор\Desktop\программирование и проекты\Git\14\Лабраторная 14\bin\Debug\Лабраторная 14.pdb
+C:\Users\федор\Desktop\программирование и проекты\Git\14\Лабраторная 14\obj\Debug\Лабраторная 14.csproj.AssemblyReference.cache
+C:\Users\федор\Desktop\программирование и проекты\Git\14\Лабраторная 14\obj\Debug\Лабраторная_14.MainForm.resources
+C:\Users\федор\Desktop\программирование и проекты\Git\14\Лабраторная 14\obj\Debug\Лабраторная_14.Properties.Resources.resources
+C:\Users\федор\Desktop\программирование и проекты\Git\14\Лабраторная 14\obj\Debug\Лабраторная 14.csproj.GenerateResource.cache
+C:\Users\федор\Desktop\программирование и проекты\Git\14\Лабраторная 14\obj\Debug\Лабраторная 14.csproj.CoreCompileInputs.cache
+C:\Users\федор\Desktop\программирование и проекты\Git\14\Лабраторная 14\obj\Debug\Лабраторная 14.exe
+C:\Users\федор\Desktop\программирование и проекты\Git\14\Лабраторная 14\obj\Debug\Лабраторная 14.pdb
